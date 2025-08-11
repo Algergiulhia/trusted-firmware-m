@@ -233,7 +233,7 @@ void pinmux_init_cfg(void)
   __HAL_RCC_GPIOG_CLK_ENABLE();
   __HAL_RCC_GPIOH_CLK_ENABLE();
   __HAL_RCC_GPIOI_CLK_ENABLE();
-  GPIOA_S->SECCFGR = 0x0;
+  GPIOA_S->SECCFGR = 0x1;
   GPIOB_S->SECCFGR = 0x0;
   GPIOC_S->SECCFGR = 0x0;
   GPIOD_S->SECCFGR = 0x0;
@@ -622,3 +622,33 @@ void gtzc_init_cfg(void)
   HAL_GTZC_TZSC_Lock(GTZC_TZSC1_S);
   HAL_GTZC_TZSC_Lock(GTZC_TZSC2_S);
 }
+
+
+struct platform_data_t timer2 = {
+	 TIM2_BASE_S,
+	 TIM3_BASE_S - 1,
+	 -1,
+	 -1
+	 };
+
+struct platform_data_t rcc = {
+	 RCC_BASE_S,
+	 FLASH_R_BASE_S - 1,
+	 -1,
+	 -1
+	 };
+
+
+struct platform_data_t spi1 = {
+  SPI1_BASE_S,
+  TIM8_BASE_S - 1,
+-1,
+-1
+}; 
+
+struct platform_data_t gpioa = {  
+   GPIOA_BASE_S,
+   GPIOB_BASE_S - 1,
+   -1,
+   -1
+   }; 

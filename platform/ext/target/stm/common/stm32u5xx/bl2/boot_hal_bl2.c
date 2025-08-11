@@ -661,6 +661,8 @@ int32_t boot_platform_init(void)
         boot_platform_noimage();
     }
 #endif /* MCUBOOT_EXT_LOADER */
+
+    
     return 0;
 }
 
